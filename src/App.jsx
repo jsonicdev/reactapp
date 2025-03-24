@@ -1,0 +1,50 @@
+import { useContext } from 'react'
+import Cloud from '../components/icons/cloud'
+import SideBar from '../components/sidebar'
+import { WeatherContext } from './Context/WeatherContext'
+
+function App() {
+	const data = useContext(WeatherContext)
+
+	console.log(data)
+	return (
+		<WeatherContext.Provider>
+			<div className='bg-cover w-full h-full bg-[url(/bg-weather.svg)]'>
+				<div className='w-screen max-w-[1440px] mx-auto text-white h-full'>
+					<div className='flex justify-between w-full h-full'>
+						<div className='w-[914px] flex flex-col justify-between pb-32'>
+							<div className='flex pt-10'>
+								<h1 className='font-bold text-xl backdrop-blur-3xl p-4 rounded-xl border-1 border-white opacity-70'>
+									Weather App (by Jsonicdev)
+								</h1>
+							</div>
+							<div className='flex items-center'>
+								<span className='text-9xl'>16°</span>
+								<div className='flex'>
+									<div className='flex flex-col pl-3'>
+										<span className='text-6xl'>{data.temp.name}</span>
+										<span className='text-lg font-medium'>
+											06:09 - Monday, 9 Sep ‘23
+										</span>
+									</div>
+									<div className='flex items-end pl-5'>
+										<Cloud />
+									</div>
+								</div>
+							</div>
+						</div>
+						<div
+							className='w-[526px] h-screen backdrop-blur-sm flex border-l-10 border-white/30 overflow-auto scrollbar-hidden cursor-pointer
+					'
+						>
+							<p className='h-full '></p>
+							<SideBar />
+						</div>
+					</div>
+				</div>
+			</div>
+		</WeatherContext.Provider>
+	)
+}
+
+export default App
