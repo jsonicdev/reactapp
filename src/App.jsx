@@ -22,7 +22,9 @@ function App() {
 								<span className='text-9xl'>16°</span>
 								<div className='flex'>
 									<div className='flex flex-col pl-3'>
-										<span className='text-6xl'>{data.temp.name}</span>
+										<span className='text-6xl'>
+											{data?.temp?.name ? data.temp.name : 'City'}
+										</span>
 										<span className='text-lg font-medium'>
 											06:09 - Monday, 9 Sep ‘23
 										</span>
