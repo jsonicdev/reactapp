@@ -1,12 +1,21 @@
-import Hero from '../components/Hero'
-import { WeatherContext } from './Context/WeatherContext'
+import Hero from './components/Hero';
+import { WeatherContext } from './context/WeatherContext';
+import { useState } from 'react';
+// Подучи жизненный цикл компонентов
+// Хуки
+// Да и архитектурное решение в виде FSD
+// Можешь почитать про другие архитектурные подходы,
+// Например, про FSD
+// Ну и вводи потихонку TS, он тебе сэкономит кучу времени и сил
 
 function App() {
-	return (
-		<WeatherContext.Provider>
-			<Hero></Hero>
-		</WeatherContext.Provider>
-	)
+  const [weather, setWeather] = useState(null);
+
+  return (
+    <WeatherContext.Provider value={{ weather, setWeather }}>
+      <Hero />
+    </WeatherContext.Provider>
+  );
 }
 
-export default App
+export default App;
