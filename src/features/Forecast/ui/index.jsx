@@ -1,6 +1,6 @@
-import { SnowIcon } from '../common/icons/SnowIcon.jsx';
+import { SnowIcon } from '../../../shared/icons/SnowIcon.jsx';
 
-function Forecast() {
+export function UI() {
   return (
     <div className="flex flex-col justify-between ">
       <div className="flex justify-between pt-14">
@@ -66,5 +66,3 @@ function Forecast() {
     </div>
   );
 }
-
-export default Forecast;

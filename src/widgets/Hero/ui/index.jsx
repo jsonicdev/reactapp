@@ -1,9 +1,9 @@
-import { CloudIcon } from '../common/icons/CloudIcon.jsx';
-import SideBar from './SideBar.jsx';
-import { useWeatherCtx } from '../context/WeatherContext.jsx';
+import { CloudIcon } from '../../../shared/icons/CloudIcon.jsx';
+import { SideBar } from '../../SideBar';
+import { useWeatherCtx } from '../../../app/providers/with-weather-ctx.jsx';
 import { useMemo } from 'react';
 
-function Hero() {
+export function UI() {
   const { weather } = useWeatherCtx();
 
   const date = useMemo(() => {
@@ -56,5 +56,3 @@ function Hero() {
     </div>
   );
 }
-
-export default Hero;
